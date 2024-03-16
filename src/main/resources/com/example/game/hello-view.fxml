@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.HelloController">
+   <children>
+      <ImageView fx:id="bg1" fitHeight="453.0" fitWidth="724.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/1689585040.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bg2" fitHeight="453.0" fitWidth="724.0" layoutX="724.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/1689585040.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy" fitHeight="115.0" fitWidth="179.0" layoutX="669.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/623.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy1" fitHeight="89.0" fitWidth="70.0" layoutX="1203.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/86.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy2" fitHeight="89.0" fitWidth="76.0" layoutX="1235.0" layoutY="288.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/86.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemy3" fitHeight="101.0" fitWidth="109.0" layoutX="990.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/674.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player" fitHeight="172.0" fitWidth="87.0" layoutX="72.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/456.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelPause" focusTraversable="false" layoutX="190.0" layoutY="160.0" prefHeight="74.0" prefWidth="215.0" text="Pause" visible="false">
+         <font>
+            <Font name="Algerian" size="65.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
