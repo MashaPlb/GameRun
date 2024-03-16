@@ -29,7 +29,7 @@ public class HelloController {
     private TranslateTransition enemyTransition, enemy1Transition, enemy2Transition, enemy3Transition;
 
     public static boolean jump = false;
-    public static boolean small = false; //для меньшения персонажа
+    public static boolean small = false;
     public static boolean big = false;
     public static boolean right = false;
     public static boolean left = false;
