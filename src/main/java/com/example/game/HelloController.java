@@ -41,31 +41,32 @@ public class HelloController {
         public void handle(long l) {
             if (jump && player.getLayoutY() > 73f)
                 player.setLayoutY(player.getLayoutY() - playerSpeed);
-            else if(player.getLayoutY() <= 181f){
+            else if (player.getLayoutY() <= 181f) {
                 jump = false;
                 player.setLayoutY(player.getLayoutY() + playerSpeed);
             }
 
-            if(small && player.getFitHeight() == 172 && player.getFitWidth() == 87) {
+            if (small && player.getFitHeight() == 172 && player.getFitWidth() == 87) {
                 player.setFitHeight(57);
                 player.setFitWidth(53);
                 player.setLayoutY(220);
                 small = false;
             }
-            if (big && player.getFitHeight() == 57 && player.getFitWidth() == 53){
+
+            if (big && player.getFitHeight() == 57 && player.getFitWidth() == 53) {
                 player.setLayoutY(166);
                 player.setFitHeight(172);
                 player.setFitWidth(87);
                 big = false;
             }
 
-
-            if(right && player.getLayoutX() < 200f)
+            if (right && player.getLayoutX() < 200f)
                 player.setLayoutX(player.getLayoutX() + playerSpeed);
-            if(left && player.getLayoutX() > 28f)
+
+            if (left && player.getLayoutX() > 28f)
                 player.setLayoutX(player.getLayoutX() - playerSpeed);
 
-            if(isPause && !labelPause.isVisible()) {
+            if (isPause && !labelPause.isVisible()) {
                 playerSpeed = 0;
                 parallelTransition.pause();
                 enemyTransition.pause();
@@ -74,7 +75,7 @@ public class HelloController {
                 enemy3Transition.pause();
                 labelPause.setVisible(true);
             }
-            else if(!isPause && labelPause.isVisible()) {
+            else if (!isPause && labelPause.isVisible()) {
                 labelPause.setVisible(false);
                 playerSpeed = 4;
                 parallelTransition.play();
@@ -83,6 +84,7 @@ public class HelloController {
                 enemy2Transition.play();
                 enemy3Transition.play();
             }
+
         }
     };
 
@@ -106,13 +108,6 @@ public class HelloController {
         enemyTransition.setCycleCount(Animation.INDEFINITE);
         enemyTransition.play();
 
-        enemy3Transition = new TranslateTransition(Duration.millis(4500), enemy3);
-        enemy3Transition.setFromX(0);
-        enemy3Transition.setToX(BG_WIDTH * -1 - 350);
-        enemy3Transition.setInterpolator(Interpolator.LINEAR);
-        enemy3Transition.setCycleCount(Animation.INDEFINITE);
-        enemy3Transition.play();
-
         enemy1Transition = new TranslateTransition(Duration.millis(6000), enemy1);
         enemy1Transition.setFromX(0);
         enemy1Transition.setToX(BG_WIDTH * -1 - 700);
@@ -127,6 +122,12 @@ public class HelloController {
         enemy2Transition.setCycleCount(Animation.INDEFINITE);
         enemy2Transition.play();
 
+        enemy3Transition = new TranslateTransition(Duration.millis(4500), enemy3);
+        enemy3Transition.setFromX(0);
+        enemy3Transition.setToX(BG_WIDTH * -1 - 350);
+        enemy3Transition.setInterpolator(Interpolator.LINEAR);
+        enemy3Transition.setCycleCount(Animation.INDEFINITE);
+        enemy3Transition.play();
 
         parallelTransition = new ParallelTransition(bgTwoTransition, bgOneTransition);
         parallelTransition.setCycleCount(Animation.INDEFINITE);
