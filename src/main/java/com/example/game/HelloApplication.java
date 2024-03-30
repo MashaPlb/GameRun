@@ -19,8 +19,10 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
 
         scene.setOnKeyPressed(e -> { //обрабатываем момент нажатия клавиши
-            if(e.getCode() == KeyCode.SPACE && !HelloController.jump)
-                HelloController.jump = true;
+            if(e.getCode() == KeyCode.SPACE && !HelloController.jump) {
+                if (!HelloController.isPause)
+                    HelloController.jump = true;
+            }
 
             if(e.getCode() == KeyCode.LEFT)
                 HelloController.left = true;
@@ -28,10 +30,15 @@ public class HelloApplication extends Application {
             if(e.getCode() == KeyCode.RIGHT)
                 HelloController.right = true;
 
-            if(e.getCode() == KeyCode.DOWN)
-                HelloController.small = true;
-            if(e.getCode() == KeyCode.UP)
-                HelloController.big = true;
+            if(e.getCode() == KeyCode.DOWN) {
+                if (!HelloController.isPause)
+                    HelloController.small = true;
+            }
+
+            if(e.getCode() == KeyCode.UP) {
+                if (!HelloController.isPause)
+                    HelloController.big = true;
+            }
         });
 
         scene.setOnKeyReleased(e -> { //обрабатываем момент отпускания клавиши
