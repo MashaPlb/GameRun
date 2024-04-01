@@ -4,24 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="commit 19.03">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemy1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemy2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/enemy3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/player1.png" afterDir="false" />
+    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,14 +33,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/desem/IdeaProjects/GameRun/src/main/resources/images&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\desem\IdeaProjects\GameRun\src\main\resources\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\java\Game\src\main\resources\images" />
     </key>
@@ -71,23 +59,6 @@
       <option name="presentableId" value="Default" />
       <updated>1710433466460</updated>
     </task>
-    <task id="LOCAL-00001" summary="commit">
-      <option name="closed" value="true" />
-      <created>1710597607800</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1710597607800</updated>
-    </task>
-    <task id="LOCAL-00002" summary="commit 19.03">
-      <option name="closed" value="true" />
-      <created>1710848821327</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1710848821327</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,10 +71,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit" />
-    <MESSAGE value="commit 19.03" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 19.03" />
   </component>
 </project>
