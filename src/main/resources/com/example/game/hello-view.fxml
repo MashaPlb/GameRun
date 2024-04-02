@@ -10,17 +10,17 @@
    <children>
       <ImageView fx:id="bg1" fitHeight="453.0" fitWidth="724.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/background.jpg" />
+            <Image url="@../../../images/1689585040.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="bg2" fitHeight="453.0" fitWidth="724.0" layoutX="724.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/background.jpg" />
+            <Image url="@../../../images/1689585040.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="enemy" fitHeight="50.0" fitWidth="27.0" layoutX="719.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/пингвин.PNG" />
+            <Image url="@../../../images/enemy.PNG" />
          </image>
       </ImageView>
       <ImageView fx:id="enemy1" fitHeight="10.0" fitWidth="10.0" layoutX="1221.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
@@ -30,7 +30,7 @@
       </ImageView>
       <ImageView fx:id="newEnemy1" fitHeight="89.0" fitWidth="60.0" layoutX="1203.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/робот.png" />
+            <Image url="@../../../images/86.png" />
          </image>
       </ImageView>
       <ImageView fx:id="enemy2" fitHeight="30.0" fitWidth="30.0" layoutX="1260.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
@@ -43,26 +43,6 @@
             <Image url="@../../../images/овал.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="newEnemy" fitHeight="82.0" fitWidth="48.0" layoutX="709.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/пингвин.PNG" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="newEnemy3" fitHeight="88.0" fitWidth="87.0" layoutX="968.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/банан.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="newEnemy2" fitHeight="89.0" fitWidth="76.0" layoutX="1235.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/робот.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="player" fitHeight="131.0" fitWidth="76.0" layoutX="70.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/игрок.png" />
-         </image>
-      </ImageView>
       <Label fx:id="labelPause" focusTraversable="false" layoutX="190.0" layoutY="160.0" prefHeight="74.0" prefWidth="215.0" text="Pause" visible="false">
          <font>
             <Font name="Algerian" size="65.0" />
@@ -73,9 +53,26 @@
             <Font name="Algerian" size="65.0" />
          </font>
       </Label>
-      <Label fx:id="labelTime" layoutX="340.0" layoutY="14.0" prefHeight="53.0" prefWidth="256.0">
-         <font>
-            <Font name="Algerian" size="21.0" />
-         </font></Label>
+      <ImageView fx:id="newEnemy" fitHeight="82.0" fitWidth="48.0" layoutX="709.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/enemy.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="newEnemy3" fitHeight="88.0" fitWidth="87.0" layoutX="968.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/банан.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="newEnemy2" fitHeight="89.0" fitWidth="76.0" layoutX="1235.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/86.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player" fitHeight="131.0" fitWidth="76.0" layoutX="70.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/456.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="playTimeLabel" layoutX="512.0" layoutY="45.0" prefHeight="18.0" prefWidth="60.0" />
    </children>
 </AnchorPane>
