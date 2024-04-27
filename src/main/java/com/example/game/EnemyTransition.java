@@ -28,6 +28,14 @@ public class EnemyTransition {
         HelloController.newEnemy1Transition.pause();
         HelloController.newEnemy2Transition.pause();
         HelloController.newEnemy3Transition.pause();
+        HelloController.plat1Transition.pause();
+        HelloController.plat2Transition.pause();
+        HelloController.plat3Transition.pause();
+        HelloController.enemyAngryTransition.pause();
+        HelloController.moneyTransition.pause();
+        HelloController.money1Transition.pause();
+        HelloController.money2Transition.pause();
+        HelloController.money3Transition.pause();
     }
 
     static void play() {
@@ -41,5 +49,13 @@ public class EnemyTransition {
         HelloController.newEnemy1Transition.play();
         HelloController.newEnemy2Transition.play();
         HelloController.newEnemy3Transition.play();
+        HelloController.plat1Transition.play();
+        HelloController.plat2Transition.play();
+        HelloController.plat3Transition.play();
+        HelloController.enemyAngryTransition.play();
+        HelloController.moneyTransition.play();
+        HelloController.money1Transition.play();
+        HelloController.money2Transition.play();
+        HelloController.money3Transition.play();
     }
 }
