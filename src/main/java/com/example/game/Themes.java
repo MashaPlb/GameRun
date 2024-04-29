@@ -37,6 +37,7 @@ public class Themes {
 
     @FXML
     void initialize() {
+
     }
 
 }

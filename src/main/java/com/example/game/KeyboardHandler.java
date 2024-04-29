@@ -3,26 +3,44 @@ package com.example.game;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 
+import java.io.IOException;
+
 public class KeyboardHandler {
     public static void setOnKeyPressed(Scene scene) {
         scene.setOnKeyPressed(e -> {
             if(e.getCode() == KeyCode.SPACE && !HelloController.jump) {
                 if (!HelloController.isPause)
                     HelloController.jump = true;
-            }
-
-            if(e.getCode() == KeyCode.LEFT)
+            } else if(e.getCode() == KeyCode.ENTER && !StartScene.isSceneChanged) {
+                try {
+                    HelloApplication.changeScene("themes.fxml");
+                    StartScene.isSceneChanged = true;
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            } else if(e.getCode() == KeyCode.LEFT)
                 HelloController.left = true;
-
-            if(e.getCode() == KeyCode.RIGHT)
+            else if(e.getCode() == KeyCode.RIGHT)
                 HelloController.right = true;
 
-            if(e.getCode() == KeyCode.DOWN) {
+            else if(e.getCode() == KeyCode.D)
+                HelloController.right2 = true;
+
+            else if(e.getCode() == KeyCode.A)
+                HelloController.left2 = true;
+
+            else if(e.getCode() == KeyCode.S)
+                HelloController.down2 = true;
+
+            else if(e.getCode() == KeyCode.W)
+                HelloController.up2 = true;
+
+            else if(e.getCode() == KeyCode.DOWN) {
                 if (!HelloController.isPause)
                     HelloController.small = true;
             }
 
-            if(e.getCode() == KeyCode.UP) {
+            else if(e.getCode() == KeyCode.UP) {
                 if (!HelloController.isPause)
                     HelloController.big = true;
             }
@@ -34,10 +52,22 @@ public class KeyboardHandler {
             if(e.getCode() == KeyCode.LEFT)
                 HelloController.left = false;
 
-            if(e.getCode() == KeyCode.RIGHT)
+            else if(e.getCode() == KeyCode.RIGHT)
                 HelloController.right = false;
 
-            if(e.getCode() == KeyCode.ESCAPE)
+            else if(e.getCode() == KeyCode.D)
+                HelloController.right2 = false;
+
+            else if(e.getCode() == KeyCode.A)
+                HelloController.left2 = false;
+
+            else if(e.getCode() == KeyCode.S)
+                HelloController.down2 = false;
+
+            else if(e.getCode() == KeyCode.W)
+                HelloController.up2 = false;
+
+            else if(e.getCode() == KeyCode.ESCAPE)
                 HelloController.isPause = !HelloController.isPause;
         });
     }

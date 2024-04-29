@@ -6,28 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.StartScene">
+<AnchorPane prefHeight="832.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.StartScene">
    <children>
-      <ImageView fitHeight="416.0" fitWidth="635.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="862.0" fitWidth="1304.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/заставка.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="126.0" layoutY="155.0" text="RUN &amp; PLAY">
+      <Label layoutX="342.0" layoutY="315.0" text="RUN &amp; PLAY">
          <font>
-            <Font name="Algerian" size="64.0" />
+            <Font name="Algerian" size="96.0" />
          </font>
       </Label>
-      <Label layoutX="201.0" layoutY="237.0" text="Tap enter to continue">
+      <Label layoutX="398.0" layoutY="415.0" text="Tap enter to continue">
          <font>
-            <Font name="Georgia" size="18.0" />
+            <Font name="Georgia" size="43.0" />
          </font>
       </Label>
-      <ImageView fitHeight="416.0" fitWidth="635.0" layoutX="615.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/заставка.jpg" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

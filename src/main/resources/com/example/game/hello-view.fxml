@@ -6,76 +6,131 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1270.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game.HelloController">
    <children>
-      <ImageView fx:id="bg1" fitHeight="453.0" fitWidth="724.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bg1" fitHeight="880.0" fitWidth="1482.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/background.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="bg2" fitHeight="453.0" fitWidth="724.0" layoutX="724.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bg2" fitHeight="880.0" fitWidth="1482.0" layoutX="1482.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/background.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy" fitHeight="50.0" fitWidth="27.0" layoutX="719.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemy" fitHeight="50.0" fitWidth="27.0" layoutX="1421.0" layoutY="624.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/пингвин.PNG" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy1" fitHeight="10.0" fitWidth="10.0" layoutX="1221.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemy1" fitHeight="10.0" fitWidth="10.0" layoutX="1923.0" layoutY="622.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/квадрат.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="newEnemy1" fitHeight="89.0" fitWidth="60.0" layoutX="1203.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="newEnemy1" fitHeight="89.0" fitWidth="60.0" layoutX="1905.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/робот.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy2" fitHeight="30.0" fitWidth="30.0" layoutX="1260.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="enemy2" fitHeight="30.0" fitWidth="30.0" layoutX="1962.0" layoutY="617.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/квадрат.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="enemy3" fitHeight="30.0" fitWidth="70.0" layoutX="977.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true" rotate="37.4">
+      <ImageView fx:id="enemy3" fitHeight="30.0" fitWidth="70.0" layoutX="1679.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" rotate="37.4">
          <image>
             <Image url="@../../../images/овал.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="newEnemy" fitHeight="82.0" fitWidth="48.0" layoutX="709.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="newEnemy" fitHeight="82.0" fitWidth="48.0" layoutX="1411.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/пингвин.PNG" />
          </image>
       </ImageView>
-      <ImageView fx:id="newEnemy3" fitHeight="88.0" fitWidth="87.0" layoutX="968.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="newEnemy3" fitHeight="88.0" fitWidth="87.0" layoutX="1670.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/банан.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="newEnemy2" fitHeight="89.0" fitWidth="76.0" layoutX="1235.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="newEnemy2" fitHeight="89.0" fitWidth="76.0" layoutX="1937.0" layoutY="613.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/робот.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="player" fitHeight="131.0" fitWidth="76.0" layoutX="70.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="player" fitHeight="131.0" fitWidth="76.0" layoutX="70.0" layoutY="547.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/игрок.png" />
          </image>
       </ImageView>
-      <Label fx:id="labelPause" focusTraversable="false" layoutX="190.0" layoutY="160.0" prefHeight="74.0" prefWidth="215.0" text="Pause" visible="false">
+      <Label fx:id="labelTime" layoutX="727.0" layoutY="40.0" prefHeight="63.0" prefWidth="538.0">
          <font>
-            <Font name="Algerian" size="65.0" />
-         </font>
-      </Label>
-      <Label fx:id="labelLose" focusTraversable="false" layoutX="200.0" layoutY="170.0" prefHeight="74.0" prefWidth="215.0" text="Lose" visible="false">
-         <font>
-            <Font name="Algerian" size="65.0" />
-         </font>
-      </Label>
-      <Label fx:id="labelTime" layoutX="340.0" layoutY="14.0" prefHeight="53.0" prefWidth="256.0">
-         <font>
-            <Font name="Algerian" size="21.0" />
+            <Font name="Algerian" size="38.0" />
          </font></Label>
+      <ImageView fx:id="platform1" fitHeight="95.0" fitWidth="183.0" layoutX="1516.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/платформа.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="platform2" fitHeight="95.0" fitWidth="183.0" layoutX="1757.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/платформа.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="platform3" fitHeight="95.0" fitWidth="183.0" layoutX="2792.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/платформа.PNG" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="money" fitHeight="39.0" fitWidth="48.0" layoutX="1573.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/ДЕНЬГА.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="money3" fitHeight="39.0" fitWidth="48.0" layoutX="2854.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/ДЕНЬГА.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="money2" fitHeight="39.0" fitWidth="48.0" layoutX="2876.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/ДЕНЬГА.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="money1" fitHeight="39.0" fitWidth="48.0" layoutX="2847.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/ДЕНЬГА.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="enemyAngry" fitHeight="108.0" fitWidth="94.0" layoutX="1803.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/злой.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="player2" fitHeight="53.0" fitWidth="105.0" layoutX="94.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/девочка.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="plane" fitHeight="82.0" fitWidth="112.0" layoutX="70.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" rotate="2.7">
+         <image>
+            <Image url="@../../../images/самолет.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="labelPause" focusTraversable="false" layoutX="450.0" layoutY="350.0" prefHeight="100.0" prefWidth="500.0" text="Pause" visible="false">
+         <font>
+            <Font name="Algerian" size="96.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelLose" focusTraversable="false" layoutX="450.0" layoutY="380.0" prefHeight="144.0" prefWidth="347.0" text="Lose" textFill="#ae3535" visible="false">
+         <font>
+            <Font name="Algerian" size="128.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelRecord" focusTraversable="false" layoutX="235.0" layoutY="350.0" prefHeight="144.0" prefWidth="978.0" text="NEW RECORD" visible="false">
+         <font>
+            <Font name="Algerian" size="128.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
