@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.util.List;
 
 public class HelloController {
-    public static long startTime, endTime, playTime, pauseStartTime, pauseTime;
+    public static long startTime, endTime, playTime, pauseStartTime, pauseTime, startInvulnerable, countInvulnerable;
 
     @FXML
     private ImageView bg1, bg2, player, enemy, enemy1, enemy2, enemy3, newEnemy, newEnemy1, newEnemy2, newEnemy3, player2, plane;
@@ -29,6 +29,8 @@ public class HelloController {
     private Label labelRecord;
     @FXML
     private Label labelCount, bonus;
+    @FXML
+    private Label labelCountInvulnerable;
 
     public static ParallelTransition parallelTransition;
     public static TranslateTransition enemyTransition;
@@ -108,6 +110,16 @@ public class HelloController {
         timeline.play();
     }
 
+//    public void countAnimation() {
+//        labelCountInvulnerable.setVisible(true);
+//
+//        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+//            labelCountInvulnerable.setVisible(false);
+//        }));
+//
+//        timeline.play();
+//    }
+
     AnimationTimer timer = new AnimationTimer() {
         @Override
         public void handle(long l) {
@@ -167,20 +179,20 @@ public class HelloController {
                 EnemyTransition.play();
                 labelPause.setVisible(false);
             }
-//            if (!magic && (player.getBoundsInParent().intersects(enemy.getBoundsInParent()) ||
-//                    player.getBoundsInParent().intersects(enemy1.getBoundsInParent()) ||
-//                    player.getBoundsInParent().intersects(enemy2.getBoundsInParent()) ||
-//                    player.getBoundsInParent().intersects(enemy3.getBoundsInParent()))) {
-//                EnemyTransition.pause();
-//                timer.stop();
-//                endTime = System.currentTimeMillis();
-//                playTime = endTime - startTime;
-//                labelTime.setText("Game time: " + playTime + " ms");
-//                labelTime.setVisible(true);
-////                repeatImage.setX(12);
-////                repeatImage.setY(9);
-//                fileHandler("best_time.txt");
-//            }
+            if (!magic && (player.getBoundsInParent().intersects(enemy.getBoundsInParent()) ||
+                    player.getBoundsInParent().intersects(enemy1.getBoundsInParent()) ||
+                    player.getBoundsInParent().intersects(enemy2.getBoundsInParent()) ||
+                    player.getBoundsInParent().intersects(enemy3.getBoundsInParent()))) {
+                EnemyTransition.pause();
+                timer.stop();
+                endTime = System.currentTimeMillis();
+                playTime = endTime - startTime;
+                labelTime.setText("Game time: " + playTime + " ms");
+                labelTime.setVisible(true);
+//                repeatImage.setX(12);
+//                repeatImage.setY(9);
+                fileHandler("best_time.txt");
+            }
             if (plane.getBoundsInParent().intersects(money.getBoundsInParent()) && !yes) {
                 yes = true;
                 money.setFitWidth(1);
@@ -201,12 +213,21 @@ public class HelloController {
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
                     magic = true;
+                    //startInvulnerable = System.currentTimeMillis();
+
                     Timeline timeline2 = new Timeline(
                             new KeyFrame(Duration.seconds(7), event -> {
                                 magic = false;
                             })
                     );
                     timeline2.play();
+//                    while (System.currentTimeMillis() - startInvulnerable <= 7) {
+//                        countInvulnerable = System.currentTimeMillis() - startInvulnerable;
+//                        if (countInvulnerable >= 5) {
+//                            labelCountInvulnerable.setText(7 - countInvulnerable + "...");
+//                            countAnimation();
+//                        }
+//                    }
                 }
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
@@ -224,12 +245,21 @@ public class HelloController {
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
                     magic = true;
+                    //startInvulnerable = System.currentTimeMillis();
+
                     Timeline timeline = new Timeline(
                             new KeyFrame(Duration.seconds(7), event -> {
                                 magic = false;
                             })
                     );
                     timeline.play();
+//                    while (System.currentTimeMillis() - startInvulnerable <= 7) {
+//                        countInvulnerable = System.currentTimeMillis() - startInvulnerable;
+//                        if (countInvulnerable >= 5) {
+//                            labelCountInvulnerable.setText(7 - countInvulnerable + "...");
+//                            countAnimation();
+//                        }
+//                    }
                 }
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);

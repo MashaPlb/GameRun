@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="commit 27.04">
+    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="commit 30.04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_time.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_time.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/photo1714472786.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/space.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/space.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714222413852</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit 30.04">
+      <option name="closed" value="true" />
+      <created>1714472876421</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714472876421</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit 01.04" />
     <MESSAGE value="commit 27.04" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 27.04" />
+    <MESSAGE value="commit 30.04" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 30.04" />
   </component>
 </project>
