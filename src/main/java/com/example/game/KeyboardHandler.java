@@ -13,7 +13,7 @@ public class KeyboardHandler {
                     HelloController.jump = true;
             } else if(e.getCode() == KeyCode.ENTER && !StartScene.isSceneChanged) {
                 try {
-                    HelloApplication.changeScene("themes.fxml");
+                    HelloApplication.changeScene("hello-view.fxml");
                     StartScene.isSceneChanged = true;
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
