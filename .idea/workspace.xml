@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="for Katy">
+    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="commit 27.04">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/best_time.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_time.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712057025661</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit 27.04">
+      <option name="closed" value="true" />
+      <created>1714222413851</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714222413852</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit 01.04" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 01.04" />
+    <MESSAGE value="commit 27.04" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 27.04" />
   </component>
 </project>

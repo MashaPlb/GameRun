@@ -27,6 +27,8 @@ public class HelloController {
     private Label labelTime;
     @FXML
     private Label labelRecord;
+    @FXML
+    private Label labelCount, bonus;
 
     public static ParallelTransition parallelTransition;
     public static TranslateTransition enemyTransition;
@@ -96,6 +98,15 @@ public class HelloController {
         );
         timeline.play();
     }
+    public void showBonusAnimation() {
+        bonus.setVisible(true);
+
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), event -> {
+            bonus.setVisible(false);
+        }));
+
+        timeline.play();
+    }
 
     AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -156,20 +167,20 @@ public class HelloController {
                 EnemyTransition.play();
                 labelPause.setVisible(false);
             }
-            if (!magic && (player.getBoundsInParent().intersects(enemy.getBoundsInParent()) ||
-                    player.getBoundsInParent().intersects(enemy1.getBoundsInParent()) ||
-                    player.getBoundsInParent().intersects(enemy2.getBoundsInParent()) ||
-                    player.getBoundsInParent().intersects(enemy3.getBoundsInParent()))) {
-                EnemyTransition.pause();
-                timer.stop();
-                endTime = System.currentTimeMillis();
-                playTime = endTime - startTime;
-                labelTime.setText("Game time: " + playTime + " ms");
-                labelTime.setVisible(true);
-//                repeatImage.setX(12);
-//                repeatImage.setY(9);
-                fileHandler("best_time.txt");
-            }
+//            if (!magic && (player.getBoundsInParent().intersects(enemy.getBoundsInParent()) ||
+//                    player.getBoundsInParent().intersects(enemy1.getBoundsInParent()) ||
+//                    player.getBoundsInParent().intersects(enemy2.getBoundsInParent()) ||
+//                    player.getBoundsInParent().intersects(enemy3.getBoundsInParent()))) {
+//                EnemyTransition.pause();
+//                timer.stop();
+//                endTime = System.currentTimeMillis();
+//                playTime = endTime - startTime;
+//                labelTime.setText("Game time: " + playTime + " ms");
+//                labelTime.setVisible(true);
+////                repeatImage.setX(12);
+////                repeatImage.setY(9);
+//                fileHandler("best_time.txt");
+//            }
             if (plane.getBoundsInParent().intersects(money.getBoundsInParent()) && !yes) {
                 yes = true;
                 money.setFitWidth(1);
@@ -183,9 +194,12 @@ public class HelloController {
                 );
                 timeline.play();
                 moneyCounter = moneyCounter + 10;
-                System.out.println(moneyCounter);
+                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+                labelCount.setVisible(true);
                 if (moneyCounter >=50) {
-                    moneyCounter -= 50;
+                    moneyCounter = moneyCounter - 50;
+                    bonus.setText("INVULNERABLE FOR 7s");
+                    showBonusAnimation();
                     magic = true;
                     Timeline timeline2 = new Timeline(
                             new KeyFrame(Duration.seconds(7), event -> {
@@ -194,6 +208,8 @@ public class HelloController {
                     );
                     timeline2.play();
                 }
+                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+                labelCount.setVisible(true);
             }
             if (plane.getBoundsInParent().intersects(money1.getBoundsInParent()) && !yes2) {
                 yes2 = true;
@@ -201,9 +217,12 @@ public class HelloController {
                 gettingMoney(money2);
                 gettingMoney(money3);
                 moneyCounter = moneyCounter + 30;
-                System.out.println(moneyCounter);
+                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+                labelCount.setVisible(true);
                 if (moneyCounter >=50) {
-                    moneyCounter -= 50;
+                    moneyCounter = moneyCounter - 50;
+                    bonus.setText("INVULNERABLE FOR 7s");
+                    showBonusAnimation();
                     magic = true;
                     Timeline timeline = new Timeline(
                             new KeyFrame(Duration.seconds(7), event -> {
@@ -212,6 +231,8 @@ public class HelloController {
                     );
                     timeline.play();
                 }
+                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+                labelCount.setVisible(true);
             }
             if (plane.getBoundsInParent().intersects(enemyAngry.getBoundsInParent())) {
                 EnemyTransition.pause();

@@ -132,5 +132,15 @@
             <Font name="Algerian" size="128.0" />
          </font>
       </Label>
+      <Label fx:id="labelCount" layoutX="57.0" layoutY="34.0" prefHeight="39.0" prefWidth="170.0">
+         <font>
+            <Font name="Algerian" size="38.0" />
+         </font>
+      </Label>
+      <Label fx:id="bonus" layoutX="227.0" layoutY="414.0" prefHeight="76.0" prefWidth="819.0">
+         <font>
+            <Font name="Algerian" size="68.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
