@@ -142,5 +142,10 @@
             <Font name="Algerian" size="68.0" />
          </font>
       </Label>
+      <Label fx:id="labelCountInvulnerable" focusTraversable="false" layoutX="460.0" layoutY="360.0" prefHeight="100.0" prefWidth="500.0" text="Pause" visible="false">
+         <font>
+            <Font name="Algerian" size="96.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
