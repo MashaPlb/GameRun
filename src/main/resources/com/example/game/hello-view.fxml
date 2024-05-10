@@ -137,12 +137,12 @@
             <Font name="Algerian" size="38.0" />
          </font>
       </Label>
-      <Label fx:id="bonus" layoutX="227.0" layoutY="414.0" prefHeight="76.0" prefWidth="819.0">
+      <Label fx:id="bonus" layoutX="227.0" layoutY="400.0" prefHeight="76.0" prefWidth="819.0">
          <font>
             <Font name="Algerian" size="68.0" />
          </font>
       </Label>
-      <Label fx:id="labelCountInvulnerable" focusTraversable="false" layoutX="460.0" layoutY="360.0" prefHeight="100.0" prefWidth="500.0" text="Pause" visible="false">
+      <Label fx:id="labelCountInvulnerable" focusTraversable="false" layoutX="460.0" layoutY="360.0" prefHeight="100.0" prefWidth="500.0" visible="false">
          <font>
             <Font name="Algerian" size="96.0" />
          </font>
