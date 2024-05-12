@@ -6,7 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
 
 import java.io.*;
 import java.nio.file.Files;
@@ -110,15 +112,38 @@ public class HelloController {
         timeline.play();
     }
 
-//    public void countAnimation() {
-//        labelCountInvulnerable.setVisible(true);
-//
-//        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
-//            labelCountInvulnerable.setVisible(false);
-//        }));
-//
-//        timeline.play();
-//    }
+public void resetGame() {
+    // Сброс игровых переменных
+    jump = false;
+    small = false;
+    big = false;
+    right = false;
+    left = false;
+    right2 = false;
+    left2 = false;
+    down2 = false;
+    up2 = false;
+    yes = false;
+    yes2 = false;
+    isPause = false;
+    magic = false;
+
+
+    // Сброс счетчиков и таймеров
+    moneyCounter = 0;
+    labelCount.setText("0");
+    playerSpeed = 0;
+    player2Speed = 0;
+    playerNSpeed = 0;
+    bonus.setText("0");
+
+    EnemyTransition.play();
+
+    startTime = System.currentTimeMillis();
+    pauseTime = 0;
+
+}
+
 
     AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -189,9 +214,14 @@ public class HelloController {
                 playTime = endTime - startTime;
                 labelTime.setText("Game time: " + playTime + " ms");
                 labelTime.setVisible(true);
-//                repeatImage.setX(12);
-//                repeatImage.setY(9);
                 fileHandler("best_time.txt");
+                PauseTransition pause = new PauseTransition(Duration.seconds(3));
+                pause.setOnFinished(e -> {
+                    Stage stage = (Stage) player.getScene().getWindow();
+                    stage.close();
+                    resetGame();
+                });
+                pause.play();
             }
             if (plane.getBoundsInParent().intersects(money.getBoundsInParent()) && !yes) {
                 yes = true;
@@ -208,12 +238,11 @@ public class HelloController {
                 moneyCounter = moneyCounter + 10;
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
-                if (moneyCounter >=50) {
-                    moneyCounter = moneyCounter - 50;
+                if (moneyCounter >= 150) {
+                    moneyCounter = moneyCounter - 150;
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
                     magic = true;
-                    //startInvulnerable = System.currentTimeMillis();
 
                     Timeline timeline2 = new Timeline(
                             new KeyFrame(Duration.seconds(7), event -> {
@@ -221,13 +250,14 @@ public class HelloController {
                             })
                     );
                     timeline2.play();
-//                    while (System.currentTimeMillis() - startInvulnerable <= 7) {
-//                        countInvulnerable = System.currentTimeMillis() - startInvulnerable;
-//                        if (countInvulnerable >= 5) {
-//                            labelCountInvulnerable.setText(7 - countInvulnerable + "...");
-//                            countAnimation();
-//                        }
-//                    }
+
+                    Timeline endTimeline = new Timeline(
+                            new KeyFrame(Duration.seconds(6), event -> {
+                                bonus.setText("INVULNERABLE END");
+                                showBonusAnimation();
+                            })
+                    );
+                    endTimeline.play();
                 }
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
@@ -240,26 +270,26 @@ public class HelloController {
                 moneyCounter = moneyCounter + 30;
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
-                if (moneyCounter >=50) {
-                    moneyCounter = moneyCounter - 50;
+                if (moneyCounter >= 150) {
+                    moneyCounter = moneyCounter - 150;
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
                     magic = true;
-                    //startInvulnerable = System.currentTimeMillis();
 
-                    Timeline timeline = new Timeline(
+                    Timeline timeline2 = new Timeline(
                             new KeyFrame(Duration.seconds(7), event -> {
                                 magic = false;
                             })
                     );
-                    timeline.play();
-//                    while (System.currentTimeMillis() - startInvulnerable <= 7) {
-//                        countInvulnerable = System.currentTimeMillis() - startInvulnerable;
-//                        if (countInvulnerable >= 5) {
-//                            labelCountInvulnerable.setText(7 - countInvulnerable + "...");
-//                            countAnimation();
-//                        }
-//                    }
+                    timeline2.play();
+
+                    Timeline endTimeline = new Timeline(
+                            new KeyFrame(Duration.seconds(6), event -> {
+                                bonus.setText("INVULNERABLE END");
+                                showBonusAnimation();
+                            })
+                    );
+                    endTimeline.play();
                 }
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
@@ -271,8 +301,6 @@ public class HelloController {
                 playTime = endTime - startTime;
                 labelTime.setText("Game time: " + playTime + " ms");
                 labelTime.setVisible(true);
-//                repeatImage.setX(12);
-//                repeatImage.setY(9);
                 fileHandler("best_time.txt");
             }
             if (isPause) {
@@ -293,8 +321,6 @@ public class HelloController {
 
     @FXML
     void initialize() {
-//        repeatImage.setX(1000);
-//        repeatImage.setY(1000);
         TranslateTransition bgOneTransition = new TranslateTransition(Duration.millis(5000), bg1);
         bgOneTransition.setFromX(0);
         int BG_WIDTH = 1482;
