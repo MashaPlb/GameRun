@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="commit 30.04">
+    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="commit 10.05">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/music/break.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/music/money.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/music/startmus.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_time.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_time.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,11 +48,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/java/Game/src/main/resources/music",
     "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\java\Game\src\main\resources\music" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\java\Game\src\main\resources\music" />
       <recent name="C:\java\Game" />
       <recent name="C:\java\Game\src\main" />
       <recent name="C:\java\Game\src\main\resources\images" />
@@ -111,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714474496553</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit 10.05">
+      <option name="closed" value="true" />
+      <created>1715339445618</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715339445618</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +142,7 @@
     <MESSAGE value="commit 01.04" />
     <MESSAGE value="commit 27.04" />
     <MESSAGE value="commit 30.04" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 30.04" />
+    <MESSAGE value="commit 10.05" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 10.05" />
   </component>
 </project>
