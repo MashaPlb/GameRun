@@ -147,5 +147,10 @@
             <Font name="Algerian" size="96.0" />
          </font>
       </Label>
+      <Label fx:id="labelReverse" layoutX="898.0" layoutY="107.0" prefHeight="87.0" prefWidth="182.0" textAlignment="CENTER" textFill="#f7eb03">
+         <font>
+            <Font name="Algerian" size="42.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
