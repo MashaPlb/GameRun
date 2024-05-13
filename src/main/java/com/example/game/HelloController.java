@@ -252,7 +252,7 @@ public void resetGame() {
                 moneyCounter = moneyCounter + 10;
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
-                if (moneyCounter >=50) {
+                if (moneyCounter >= 50) {
                     moneyCounter = moneyCounter - 50;
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
