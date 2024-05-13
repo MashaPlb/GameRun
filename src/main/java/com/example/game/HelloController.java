@@ -8,7 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -21,6 +22,8 @@ public class HelloController {
     private ImageView bg1, bg2, player, enemy, enemy1, enemy2, enemy3, newEnemy, newEnemy1, newEnemy2, newEnemy3, player2, plane;
     @FXML
     private ImageView platform1, platform2, platform3, money, money1, money2, money3, enemyAngry;
+    @FXML
+    private ImageView speed;
     @FXML
     private Label labelPause;
     @FXML
@@ -208,6 +211,12 @@ public void resetGame() {
                     player.getBoundsInParent().intersects(enemy1.getBoundsInParent()) ||
                     player.getBoundsInParent().intersects(enemy2.getBoundsInParent()) ||
                     player.getBoundsInParent().intersects(enemy3.getBoundsInParent()))) {
+
+                String musicFile = "src/main/resources/music/break.mp3";
+                Media sound2 = new Media(new File(musicFile).toURI().toString());
+                MediaPlayer mediaPlayer2 = new MediaPlayer(sound2);
+                mediaPlayer2.play();
+
                 EnemyTransition.pause();
                 timer.stop();
                 endTime = System.currentTimeMillis();
@@ -223,6 +232,7 @@ public void resetGame() {
                 });
                 pause.play();
             }
+            MediaPlayer mediaPlayer;
             if (plane.getBoundsInParent().intersects(money.getBoundsInParent()) && !yes) {
                 yes = true;
                 money.setFitWidth(1);
@@ -235,11 +245,15 @@ public void resetGame() {
                         })
                 );
                 timeline.play();
+                String musicFile = "src/main/resources/music/money.mp3";
+                Media sound = new Media(new File(musicFile).toURI().toString());
+                mediaPlayer = new MediaPlayer(sound);
+                mediaPlayer.play();
                 moneyCounter = moneyCounter + 10;
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
-                if (moneyCounter >= 150) {
-                    moneyCounter = moneyCounter - 150;
+                if (moneyCounter >=50) {
+                    moneyCounter = moneyCounter - 50;
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
                     magic = true;
@@ -267,11 +281,15 @@ public void resetGame() {
                 gettingMoney(money1);
                 gettingMoney(money2);
                 gettingMoney(money3);
+                String musicFile = "src/main/resources/music/money.mp3";
+                Media sound = new Media(new File(musicFile).toURI().toString());
+                mediaPlayer = new MediaPlayer(sound);
+                mediaPlayer.play();
                 moneyCounter = moneyCounter + 30;
                 labelCount.setText("\uD83D\uDCB0" + moneyCounter);
                 labelCount.setVisible(true);
-                if (moneyCounter >= 150) {
-                    moneyCounter = moneyCounter - 150;
+                if (moneyCounter >= 50) {
+                    moneyCounter = moneyCounter - 50;
                     bonus.setText("INVULNERABLE FOR 7s");
                     showBonusAnimation();
                     magic = true;

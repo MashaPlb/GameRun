@@ -26,7 +26,7 @@ public class HelloApplication extends Application {
         KeyboardHandler.setOnKeyReleased(scene);
 
         stage.show();
-        String musicFile = "D:\\Загрузки\\startmus.mp3";
+        String musicFile = "src/main/resources/music/startmus.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         mediaPlayer = new MediaPlayer(sound);
 
