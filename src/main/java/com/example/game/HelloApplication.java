@@ -1,6 +1,8 @@
 package com.example.game;
 
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -48,6 +50,14 @@ public class HelloApplication extends Application {
         KeyboardHandler.setOnKeyPressed(scene);
         KeyboardHandler.setOnKeyReleased(scene);
         stage.show();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+            HelloController.reverse = !HelloController.reverse;
+//            HelloController.labelReverse.setText("REVERSE");
+//            HelloController.reverseAnimation();
+            System.out.println(HelloController.reverse);
+        }));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
 
     public static void main(String[] args) {

@@ -17,6 +17,7 @@ import java.util.List;
 
 public class HelloController {
     public static long startTime, endTime, playTime, pauseStartTime, pauseTime, startInvulnerable, countInvulnerable;
+    public static boolean reverse = false;
 
     @FXML
     private ImageView bg1, bg2, player, enemy, enemy1, enemy2, enemy3, newEnemy, newEnemy1, newEnemy2, newEnemy3, player2, plane;
@@ -130,6 +131,7 @@ public void resetGame() {
     yes2 = false;
     isPause = false;
     magic = false;
+    reverse = false;
 
 
     // Сброс счетчиков и таймеров
