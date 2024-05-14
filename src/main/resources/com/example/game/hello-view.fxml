@@ -137,7 +137,7 @@
             <Font name="Algerian" size="38.0" />
          </font>
       </Label>
-      <Label fx:id="bonus" layoutX="227.0" layoutY="400.0" prefHeight="76.0" prefWidth="819.0">
+      <Label fx:id="labelBonus" layoutX="227.0" layoutY="400.0" prefHeight="76.0" prefWidth="819.0">
          <font>
             <Font name="Algerian" size="68.0" />
          </font>

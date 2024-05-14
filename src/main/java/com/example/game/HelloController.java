@@ -1,30 +1,20 @@
 package com.example.game;
 
 import javafx.animation.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.util.List;
 
 public class HelloController {
-    public static long startTime, endTime, playTime, pauseStartTime, pauseTime, startInvulnerable, countInvulnerable;
-    public static boolean reverse = false;
-
     @FXML
     private ImageView bg1, bg2, player, enemy, enemy1, enemy2, enemy3, newEnemy, newEnemy1, newEnemy2, newEnemy3, player2, plane;
     @FXML
     private ImageView platform1, platform2, platform3, money, money1, money2, money3, enemyAngry;
-    @FXML
-    private ImageView speed;
     @FXML
     private Label labelPause;
     @FXML
@@ -34,10 +24,9 @@ public class HelloController {
     @FXML
     private Label labelRecord;
     @FXML
-    private Label labelCount, bonus;
+    private Label labelCount;
     @FXML
-    private Label labelCountInvulnerable;
-
+    private Label labelBonus;
     public static ParallelTransition parallelTransition;
     public static TranslateTransition enemyTransition;
     public static TranslateTransition enemy1Transition;
@@ -55,7 +44,8 @@ public class HelloController {
     public static TranslateTransition money2Transition;
     public static TranslateTransition money3Transition;
     public static TranslateTransition enemyAngryTransition;
-
+    public static long startTime, endTime, playTime, pauseStartTime, pauseTime;
+    public static boolean reverse = false;
     public static boolean jump = false;
     public static boolean small = false;
     public static boolean big = false;
@@ -63,15 +53,15 @@ public class HelloController {
     public static boolean left = false;
     public static boolean right2 = false;
     public static boolean left2 = false;
-    public static boolean down2 = false;
-    public static boolean up2 = false;
-    public static boolean yes = false;
-    public static boolean yes2 = false;
+    public static boolean down = false;
+    public static boolean up = false;
+    public static boolean isMoneyCollected = false;
+    public static boolean isBigMoneyCollected = false;
     public static boolean isPause = false;
-    public boolean magic = false;
+    public boolean isInvulnerable = false;
     public int moneyCounter = 0;
-    public static int playerSpeed = 4;
-    public static int player2Speed = 4, playerNSpeed = 3;
+    public static int playerSpeed = 4, player2Speed = 4, playerNSpeed = 3;
+    public final int BG_WIDTH = 1482;
     public void fileHandler(String filename) {
         List<String> data;
         try {
@@ -94,62 +84,127 @@ public class HelloController {
             labelLose.setVisible(true);
         }
     }
-    public void gettingMoney(ImageView myMoney) {
-        myMoney.setFitWidth(1);
-        myMoney.setFitHeight(1);
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(3), event -> {
-                    myMoney.setFitWidth(48);
-                    myMoney.setFitHeight(39);
-                    yes2 = false;
+    public void changeParameters(int height, int width, int layoutY) {
+        player.setFitHeight(height);
+        player.setFitWidth(width);
+        player.setLayoutY(layoutY);
+    }
+    public void settingPause() {
+        EnemyTransition.pause();
+        labelPause.setVisible(true);
+        endTime = System.currentTimeMillis();
+        playTime = endTime - startTime - pauseTime;
+        labelTime.setText("Game time: " + playTime + " ms");
+        labelTime.setVisible(true);
+    }
+    public void actionAfterPause() {
+        if (pauseStartTime != 0) {
+            pauseTime += System.currentTimeMillis() - pauseStartTime;
+            pauseStartTime = 0;
+        }
+        endTime = System.currentTimeMillis();
+        playTime = endTime - startTime - pauseTime;
+        labelTime.setText("Game time: " + playTime + " ms");
+    }
+    public void moneyHandler() {
+        isMoneyCollected = true;
+        Money.gettingMoney(money);
+        MusicHandler.playMusic("src/main/resources/music/money.mp3");
+
+        moneyCounter = moneyCounter + 10;
+        labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+        labelCount.setVisible(true);
+        if (moneyCounter >=50) {
+            gettingBonus();
+        }
+        labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+        labelCount.setVisible(true);
+    }
+    public void bigMoneyHandler() {
+        isBigMoneyCollected = true;
+        Money.gettingBigMoney(money1);
+        Money.gettingBigMoney(money2);
+        Money.gettingBigMoney(money3);
+        MusicHandler.playMusic("src/main/resources/music/money.mp3");
+
+        moneyCounter = moneyCounter + 30;
+        labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+        labelCount.setVisible(true);
+        if (moneyCounter >= 50) {
+            gettingBonus();
+        }
+        labelCount.setText("\uD83D\uDCB0" + moneyCounter);
+        labelCount.setVisible(true);
+    }
+    public void gettingBonus() {
+        moneyCounter = moneyCounter - 50;
+        labelBonus.setText("INVULNERABLE FOR 7s");
+        showBonusAnimation();
+        isInvulnerable = true;
+        Timeline timeline2 = new Timeline(
+                new KeyFrame(Duration.seconds(7), event -> isInvulnerable = false)
+        );
+        timeline2.play();
+        Timeline endTimeline = new Timeline(
+                new KeyFrame(Duration.seconds(6), event -> {
+                    labelBonus.setText("INVULNERABLE END");
+                    showBonusAnimation();
                 })
         );
-        timeline.play();
+        endTimeline.play();
     }
     public void showBonusAnimation() {
-        bonus.setVisible(true);
-
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), event -> {
-            bonus.setVisible(false);
-        }));
-
+        labelBonus.setVisible(true);
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), event -> labelBonus.setVisible(false)));
         timeline.play();
     }
-
-public void resetGame() {
-    // Сброс игровых переменных
-    jump = false;
-    small = false;
-    big = false;
-    right = false;
-    left = false;
-    right2 = false;
-    left2 = false;
-    down2 = false;
-    up2 = false;
-    yes = false;
-    yes2 = false;
-    isPause = false;
-    magic = false;
-    reverse = false;
-
-
-    // Сброс счетчиков и таймеров
-    moneyCounter = 0;
-    labelCount.setText("0");
-    playerSpeed = 0;
-    player2Speed = 0;
-    playerNSpeed = 0;
-    bonus.setText("0");
-
-    EnemyTransition.play();
-
-    startTime = System.currentTimeMillis();
-    pauseTime = 0;
-
-}
-
-
+    public void createPauseBeforeRestart() {
+        PauseTransition pause = new PauseTransition(Duration.seconds(3));
+        pause.setOnFinished(e -> {
+            Stage stage = (Stage) player.getScene().getWindow();
+            stage.close();
+            resetGame();
+        });
+        pause.play();
+    }
+    public void loseGame() {
+        MusicHandler.playMusic("src/main/resources/music/break.mp3");
+        EnemyTransition.pause();
+        timer.stop();
+        endTime = System.currentTimeMillis();
+        playTime = endTime - startTime;
+        labelTime.setText("Game time: " + playTime + " ms");
+        labelTime.setVisible(true);
+        fileHandler("best_time.txt");
+        createPauseBeforeRestart();
+    }
+    public void resetGame() {
+        KeyboardHandler.isSceneChanged = false;
+        HelloApplication.timeline.stop();
+        jump = false;
+        small = false;
+        big = false;
+        right = false;
+        left = false;
+        right2 = false;
+        left2 = false;
+        down = false;
+        up = false;
+        isMoneyCollected = false;
+        isBigMoneyCollected = false;
+        isPause = false;
+        isInvulnerable = false;
+        reverse = false;
+        moneyCounter = 0;
+        playerSpeed = 0;
+        player2Speed = 0;
+        playerNSpeed = 0;
+        pauseTime = 0;
+        labelBonus.setText("0");
+        labelCount.setText("0");
+        EnemyTransition.play();
+        startTime = System.currentTimeMillis();
+    }
     AnimationTimer timer = new AnimationTimer() {
         @Override
         public void handle(long l) {
@@ -166,22 +221,17 @@ public void resetGame() {
                 player.setLayoutY(player.getLayoutY() + playerNSpeed);
             }
             if (small && player.getFitHeight() == 131 && player.getFitWidth() == 76) {
-                player.setFitHeight(57);
-                player.setFitWidth(53);
-                player.setLayoutY(480);
+                changeParameters(57, 53, 480);
                 small = false;
             }
             if (big && player.getFitHeight() == 57 && player.getFitWidth() == 53) {
-                player.setLayoutY(547);
-                player.setFitHeight(131);
-                player.setFitWidth(76);
+                changeParameters(131, 76, 547);
                 big = false;
             }
             if (right && player.getLayoutX() < 200f)
                 player.setLayoutX(player.getLayoutX() + playerSpeed);
             if (left && player.getLayoutX() > 28f)
                 player.setLayoutX(player.getLayoutX() - playerSpeed);
-
             if (right2 && player2.getLayoutX() < 200f) {
                 player2.setLayoutX(player2.getLayoutX() + player2Speed);
                 plane.setLayoutX(plane.getLayoutX() + player2Speed);
@@ -190,168 +240,38 @@ public void resetGame() {
                 player2.setLayoutX(player2.getLayoutX() - player2Speed);
                 plane.setLayoutX(plane.getLayoutX() - player2Speed);
             }
-            if (down2 && player2.getLayoutY() < 152f) {
+            if (down && player2.getLayoutY() < 152f) {
                 player2.setLayoutY(241);
                 plane.setLayoutY(270);
             }
-            if (up2 && player2.getLayoutY() > 240f) {
+            if (up && player2.getLayoutY() > 240f) {
                 player2.setLayoutY(151);
                 plane.setLayoutY(180);
             }
-            if (isPause && !labelPause.isVisible()) {
-                EnemyTransition.pause();
-                labelPause.setVisible(true);
-                endTime = System.currentTimeMillis();
-                playTime = endTime - startTime - pauseTime;
-                labelTime.setText("Game time: " + playTime + " ms");
-                labelTime.setVisible(true);
-            } else if (!isPause && labelPause.isVisible()) {
+            if (isPause && !labelPause.isVisible())
+                settingPause();
+            else if (!isPause && labelPause.isVisible()) {
                 EnemyTransition.play();
                 labelPause.setVisible(false);
             }
-            if (!magic && (player.getBoundsInParent().intersects(enemy.getBoundsInParent()) ||
+            if (!isInvulnerable && (player.getBoundsInParent().intersects(enemy.getBoundsInParent()) ||
                     player.getBoundsInParent().intersects(enemy1.getBoundsInParent()) ||
                     player.getBoundsInParent().intersects(enemy2.getBoundsInParent()) ||
-                    player.getBoundsInParent().intersects(enemy3.getBoundsInParent()))) {
-
-                String musicFile = "src/main/resources/music/break.mp3";
-                Media sound2 = new Media(new File(musicFile).toURI().toString());
-                MediaPlayer mediaPlayer2 = new MediaPlayer(sound2);
-                mediaPlayer2.play();
-
-                EnemyTransition.pause();
-                timer.stop();
-                endTime = System.currentTimeMillis();
-                playTime = endTime - startTime;
-                labelTime.setText("Game time: " + playTime + " ms");
-                labelTime.setVisible(true);
-                fileHandler("best_time.txt");
-                PauseTransition pause = new PauseTransition(Duration.seconds(3));
-                pause.setOnFinished(e -> {
-                    Stage stage = (Stage) player.getScene().getWindow();
-                    stage.close();
-                    resetGame();
-                });
-                pause.play();
-            }
-            MediaPlayer mediaPlayer;
-            if (plane.getBoundsInParent().intersects(money.getBoundsInParent()) && !yes) {
-                yes = true;
-                money.setFitWidth(1);
-                money.setFitHeight(1);
-                Timeline timeline = new Timeline(
-                        new KeyFrame(Duration.seconds(3), event -> {
-                            money.setFitWidth(48);
-                            money.setFitHeight(39);
-                            yes = false;
-                        })
-                );
-                timeline.play();
-                String musicFile = "src/main/resources/music/money.mp3";
-                Media sound = new Media(new File(musicFile).toURI().toString());
-                mediaPlayer = new MediaPlayer(sound);
-                mediaPlayer.play();
-                moneyCounter = moneyCounter + 10;
-                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
-                labelCount.setVisible(true);
-                if (moneyCounter >=50) {
-                    moneyCounter = moneyCounter - 50;
-                    bonus.setText("INVULNERABLE FOR 7s");
-                    showBonusAnimation();
-                    magic = true;
-
-                    Timeline timeline2 = new Timeline(
-                            new KeyFrame(Duration.seconds(7), event -> {
-                                magic = false;
-                            })
-                    );
-                    timeline2.play();
-
-                    Timeline endTimeline = new Timeline(
-                            new KeyFrame(Duration.seconds(6), event -> {
-                                bonus.setText("INVULNERABLE END");
-                                showBonusAnimation();
-                            })
-                    );
-                    endTimeline.play();
-                }
-                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
-                labelCount.setVisible(true);
-            }
-            if (plane.getBoundsInParent().intersects(money1.getBoundsInParent()) && !yes2) {
-                yes2 = true;
-                gettingMoney(money1);
-                gettingMoney(money2);
-                gettingMoney(money3);
-                String musicFile = "src/main/resources/music/money.mp3";
-                Media sound = new Media(new File(musicFile).toURI().toString());
-                mediaPlayer = new MediaPlayer(sound);
-                mediaPlayer.play();
-                moneyCounter = moneyCounter + 30;
-                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
-                labelCount.setVisible(true);
-                if (moneyCounter >= 50) {
-                    moneyCounter = moneyCounter - 50;
-                    bonus.setText("INVULNERABLE FOR 7s");
-                    showBonusAnimation();
-                    magic = true;
-
-                    Timeline timeline2 = new Timeline(
-                            new KeyFrame(Duration.seconds(7), event -> {
-                                magic = false;
-                            })
-                    );
-                    timeline2.play();
-
-                    Timeline endTimeline = new Timeline(
-                            new KeyFrame(Duration.seconds(6), event -> {
-                                bonus.setText("INVULNERABLE END");
-                                showBonusAnimation();
-                            })
-                    );
-                    endTimeline.play();
-                }
-                labelCount.setText("\uD83D\uDCB0" + moneyCounter);
-                labelCount.setVisible(true);
-            }
-            if (plane.getBoundsInParent().intersects(enemyAngry.getBoundsInParent())) {
-                EnemyTransition.pause();
-                timer.stop();
-                endTime = System.currentTimeMillis();
-                playTime = endTime - startTime;
-                labelTime.setText("Game time: " + playTime + " ms");
-                labelTime.setVisible(true);
-                fileHandler("best_time.txt");
-            }
+                    player.getBoundsInParent().intersects(enemy3.getBoundsInParent())))
+                loseGame();
+            if (plane.getBoundsInParent().intersects(money.getBoundsInParent()) && !isMoneyCollected && !isPause)
+                moneyHandler();
+            if (plane.getBoundsInParent().intersects(money1.getBoundsInParent()) && !isBigMoneyCollected && !isPause)
+                bigMoneyHandler();
+            if (plane.getBoundsInParent().intersects(enemyAngry.getBoundsInParent()))
+                loseGame();
             if (isPause) {
-                    if (pauseStartTime == 0)
-                        pauseStartTime = System.currentTimeMillis();
-            } else {
-                if (pauseStartTime != 0) {
-                    pauseTime += System.currentTimeMillis() - pauseStartTime;
-                    pauseStartTime = 0;
-                }
-                endTime = System.currentTimeMillis();
-                playTime = endTime - startTime - pauseTime;
-                labelTime.setText("Game time: " + playTime + " ms");
-            }
+                if (pauseStartTime == 0)
+                    pauseStartTime = System.currentTimeMillis();
+            } else actionAfterPause();
         }
     };
-
-
-    @FXML
-    void initialize() {
-        TranslateTransition bgOneTransition = new TranslateTransition(Duration.millis(5000), bg1);
-        bgOneTransition.setFromX(0);
-        int BG_WIDTH = 1482;
-        bgOneTransition.setToX(BG_WIDTH * -1);
-        bgOneTransition.setInterpolator(Interpolator.LINEAR);
-
-        TranslateTransition bgTwoTransition = new TranslateTransition(Duration.millis(5000), bg2);
-        bgTwoTransition.setFromX(0);
-        bgTwoTransition.setToX(BG_WIDTH * -1);
-        bgTwoTransition.setInterpolator(Interpolator.LINEAR);
-
+    void createAllEnemiesTransitions() {
         enemyTransition = EnemyTransition.create(3500, -BG_WIDTH - 100, enemy);
         newEnemyTransition = EnemyTransition.create(3500, -BG_WIDTH - 100, newEnemy);
         enemy3Transition = EnemyTransition.create(4500, -BG_WIDTH - 350, enemy3);
@@ -368,8 +288,21 @@ public void resetGame() {
         money2Transition = EnemyTransition.create(6500, -BG_WIDTH - 1750, money2);
         money3Transition = EnemyTransition.create(6500, -BG_WIDTH - 1750, money3);
         enemyAngryTransition = EnemyTransition.create(6500, -BG_WIDTH - 1750, enemyAngry);
+    }
+    @FXML
+    void initialize() {
+        TranslateTransition bgOneTransition = new TranslateTransition(Duration.millis(5000), bg1);
+        bgOneTransition.setFromX(0);
 
+        bgOneTransition.setToX(BG_WIDTH * -1);
+        bgOneTransition.setInterpolator(Interpolator.LINEAR);
 
+        TranslateTransition bgTwoTransition = new TranslateTransition(Duration.millis(5000), bg2);
+        bgTwoTransition.setFromX(0);
+        bgTwoTransition.setToX(BG_WIDTH * -1);
+        bgTwoTransition.setInterpolator(Interpolator.LINEAR);
+
+        createAllEnemiesTransitions();
 
         parallelTransition = new ParallelTransition(bgTwoTransition, bgOneTransition);
         parallelTransition.setCycleCount(Animation.INDEFINITE);
@@ -378,5 +311,4 @@ public void resetGame() {
         timer.start();
         startTime = System.currentTimeMillis();
     }
-
 }

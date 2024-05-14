@@ -1,22 +1,19 @@
 package com.example.game;
-
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class StartScene {
-
     @FXML
-    private ResourceBundle resources;
-
+    private Button startButton;
     @FXML
-    private URL location;
-
-    public static boolean isSceneChanged = false;
-
-    @FXML
-    void initialize() {
-
+    void btnClick(ActionEvent event) throws IOException {
+        Button btn = (Button)event.getSource();
+        if (btn == startButton) {
+            HelloApplication.changeScene("hello-view.fxml");
+        }
     }
-
+    @FXML
+    void initialize() {}
 }
