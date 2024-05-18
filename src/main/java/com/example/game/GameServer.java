@@ -2,6 +2,8 @@ package com.example.game;
 
 import java.io.*;
 import java.net.*;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -11,6 +13,23 @@ public class GameServer {
 
     public GameServer(int port) throws IOException {
         serverSocket = new ServerSocket(port);
+    }
+    private final Set<ClientHandler> clientHandlers = new HashSet<>();
+    private final Set<ClientHandler> readyClients = new HashSet<>();
+
+    // Метод для добавления клиента в набор обработчиков
+    public synchronized void addClientHandler(ClientHandler clientHandler) {
+        clientHandlers.add(clientHandler);
+    }
+
+    // Метод для установки клиента как готового
+    public synchronized void setClientReady(ClientHandler clientHandler) {
+        readyClients.add(clientHandler);
+        if (readyClients.size() == clientHandlers.size()) {
+            for (ClientHandler client : clientHandlers) {
+                client.sendStartGameSignal();
+            }
+        }
     }
 
     public void start() {
@@ -34,6 +53,13 @@ public class GameServer {
         public ClientHandler(Socket socket) {
             this.clientSocket = socket;
         }
+        private void sendStartGameSignal() {
+            try {
+                out.writeObject("START_GAME");
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "Ошибка при отправке сигнала начала игры", e);
+            }
+        }
 
         public void run() {
             try {
@@ -42,6 +68,7 @@ public class GameServer {
 
                 // Отправка приветственного сообщения новому клиенту
                 out.writeObject("Добро пожаловать на сервер!");
+                GameClient.waitForStartSignal();
 
                 // Обработка сообщений от клиента
                 Object inputObject;
