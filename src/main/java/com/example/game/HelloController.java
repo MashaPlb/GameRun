@@ -62,6 +62,7 @@ public class HelloController {
     public int moneyCounter = 0;
     public static int playerSpeed = 4, player2Speed = 4, playerNSpeed = 3;
     public final int BG_WIDTH = 1482;
+
     public void fileHandler(String filename) {
         List<String> data;
         try {
