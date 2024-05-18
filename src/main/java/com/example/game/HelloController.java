@@ -27,41 +27,143 @@ public class HelloController {
     private Label labelCount;
     @FXML
     private Label labelBonus;
-    public static ParallelTransition parallelTransition;
-    public static TranslateTransition enemyTransition;
-    public static TranslateTransition enemy1Transition;
-    public static TranslateTransition enemy2Transition;
-    public static TranslateTransition enemy3Transition;
-    public static TranslateTransition newEnemyTransition;
-    public static TranslateTransition newEnemy1Transition;
-    public static TranslateTransition newEnemy2Transition;
-    public static TranslateTransition newEnemy3Transition;
-    public static TranslateTransition plat1Transition;
-    public static TranslateTransition plat2Transition;
-    public static TranslateTransition plat3Transition;
-    public static TranslateTransition moneyTransition;
-    public static TranslateTransition money1Transition;
-    public static TranslateTransition money2Transition;
-    public static TranslateTransition money3Transition;
-    public static TranslateTransition enemyAngryTransition;
-    public static long startTime, endTime, playTime, pauseStartTime, pauseTime;
-    public static boolean reverse = false;
-    public static boolean jump = false;
-    public static boolean small = false;
-    public static boolean big = false;
-    public static boolean right = false;
-    public static boolean left = false;
-    public static boolean right2 = false;
-    public static boolean left2 = false;
-    public static boolean down = false;
-    public static boolean up = false;
+    private static ParallelTransition parallelTransition;
+    public static ParallelTransition getting_parallelTransition() {
+        return parallelTransition;
+    }
+    private static TranslateTransition enemyTransition;
+    public static TranslateTransition getting_enemyTransition() {
+        return enemyTransition;
+    }
+    private static TranslateTransition enemy1Transition;
+    public static TranslateTransition getting_enemy1Transition() {
+        return enemy1Transition;
+    }
+    private static TranslateTransition enemy2Transition;
+    public static TranslateTransition getting_enemy2Transition() {
+        return enemy2Transition;
+    }
+    private static TranslateTransition enemy3Transition;
+    public static TranslateTransition getting_enemy3Transition() {
+        return enemy3Transition;
+    }
+    private static TranslateTransition newEnemyTransition;
+    public static TranslateTransition getting_newEnemyTransition() {
+        return newEnemyTransition;
+    }
+    private static TranslateTransition newEnemy1Transition;
+    public static TranslateTransition getting_newEnemy1Transition() {
+        return newEnemy1Transition;
+    }
+    private static TranslateTransition newEnemy2Transition;
+    public static TranslateTransition getting_newEnemy2Transition() {
+        return newEnemy2Transition;
+    }
+    private static TranslateTransition newEnemy3Transition;
+    public static TranslateTransition getting_newEnemy3Transition() {
+        return newEnemy3Transition;
+    }
+    private static TranslateTransition plat1Transition;
+    public static TranslateTransition getting_plat1Transition() {
+        return plat1Transition;
+    }
+    private static TranslateTransition plat2Transition;
+    public static TranslateTransition getting_plat2Transition() {
+        return plat2Transition;
+    }
+    private static TranslateTransition plat3Transition;
+    public static TranslateTransition getting_plat3Transition() {
+        return plat3Transition;
+    }
+    private static TranslateTransition moneyTransition;
+    public static TranslateTransition getting_moneyTransition() {
+        return moneyTransition;
+    }
+    private static TranslateTransition money1Transition;
+    public static TranslateTransition getting_money1Transition() {
+        return money1Transition;
+    }
+    private static TranslateTransition money2Transition;
+    public static TranslateTransition getting_money2Transition() {
+        return money2Transition;
+    }
+    private static TranslateTransition money3Transition;
+    public static TranslateTransition getting_money3Transition() {
+        return money3Transition;
+    }
+    private static TranslateTransition enemyAngryTransition;
+    public static TranslateTransition getting_enemyAngryTransition() {
+        return enemyAngryTransition;
+    }
+    private static long startTime, endTime, playTime, pauseStartTime, pauseTime;
+    private static boolean reverse = false;
+    public static boolean getting_reverse() {
+        return reverse;
+    }
+    public static void setting_reverse(boolean new_reverse) {
+        reverse = new_reverse;
+    }
+    private static boolean jump = false;
+    public static boolean getting_jump() {
+        return jump;
+    }
+    public static void setting_jump(boolean new_jump) {
+        jump = new_jump;
+    }
+    private static boolean small = false;
+    public static void setting_small(boolean new_small) {
+        small = new_small;
+    }
+    private static boolean big = false;
+    public static void setting_big(boolean new_big) {
+        big = new_big;
+    }
+    private static boolean right = false;
+    public static void setting_right(boolean new_right) {
+        right = new_right;
+    }
+    private static boolean left = false;
+    public static void setting_left(boolean new_left) {
+        left = new_left;
+    }
+    private static boolean right2 = false;
+    public static void setting_right2(boolean new_right2) {
+        right2 = new_right2;
+    }
+    private static boolean left2 = false;
+    public static void setting_left2(boolean new_left2) {
+        left2 = new_left2;
+    }
+    private static boolean down = false;
+    public static void setting_down(boolean new_down) {
+        down = new_down;
+    }
+    private static boolean up = false;
+    public static void setting_up(boolean new_up) {
+        up = new_up;
+    }
     public static boolean isMoneyCollected = false;
-    public static boolean isBigMoneyCollected = false;
-    public static boolean isPause = false;
-    public boolean isInvulnerable = false;
-    public int moneyCounter = 0;
-    public static int playerSpeed = 4, player2Speed = 4, playerNSpeed = 3;
-    public final int BG_WIDTH = 1482;
+    public static void setting_isMoneyCollected(boolean money) {
+        isMoneyCollected = money;
+    }
+    private static boolean isBigMoneyCollected = false;
+    public static void setting_isBigMoneyCollected(boolean money) {
+        isBigMoneyCollected = money;
+    }
+    private static boolean isPause = false;
+    public static boolean isPause() {
+        return !isPause;
+    }
+    public static void setting_isPause(boolean pause) {
+        isPause = pause;
+    }
+    private boolean isInvulnerable = false;
+    private int moneyCounter = 0;
+    private static int playerSpeed = 4, player2Speed = 4, playerNSpeed = 3;
+    public static void setting_playerSpeed(int number) {
+        playerSpeed = number;
+    }
+    private final int BG_WIDTH = 1482;
 
     public void fileHandler(String filename) {
         List<String> data;
@@ -110,7 +212,7 @@ public class HelloController {
     public void moneyHandler() {
         isMoneyCollected = true;
         Money.gettingMoney(money);
-        MusicHandler.playMusic("src/main/resources/music/money.mp3");
+        MusicHandler.playMusic("/music/money.mp3");
 
         moneyCounter = moneyCounter + 10;
         labelCount.setText("\uD83D\uDCB0" + moneyCounter);
@@ -126,7 +228,7 @@ public class HelloController {
         Money.gettingBigMoney(money1);
         Money.gettingBigMoney(money2);
         Money.gettingBigMoney(money3);
-        MusicHandler.playMusic("src/main/resources/music/money.mp3");
+        MusicHandler.playMusic("/music/money.mp3");
 
         moneyCounter = moneyCounter + 30;
         labelCount.setText("\uD83D\uDCB0" + moneyCounter);
@@ -169,7 +271,6 @@ public class HelloController {
         pause.play();
     }
     public void loseGame() {
-        MusicHandler.playMusic("src/main/resources/music/break.mp3");
         EnemyTransition.pause();
         timer.stop();
         endTime = System.currentTimeMillis();

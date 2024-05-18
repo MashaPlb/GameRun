@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         gameClient = new GameClient();
         try {
-            gameClient.startConnection("10.249.1.124", 6666);
+            gameClient.startConnection("10.249.25.235", 6666);
             System.out.println("Подключение к серверу успешно установлено.");
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Не удалось подключиться к серверу:", e);
@@ -36,9 +36,7 @@ public class HelloApplication extends Application {
         KeyboardHandler.setOnKeyPressed(scene);
         KeyboardHandler.setOnKeyReleased(scene);
         stage.show();
-        Media sound = new Media(Objects.requireNonNull(getClass().getResource("/music/startmus.mp3")).toExternalForm());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();
+        MediaPlayer mediaPlayer = MusicHandler.playStartMusic("/music/startmus.mp3");
         stage.setOnCloseRequest(e -> mediaPlayer.stop());
     }
 
@@ -52,8 +50,8 @@ public class HelloApplication extends Application {
         KeyboardHandler.setOnKeyReleased(scene);
         stage.show();
         timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
-            HelloController.reverse = !HelloController.reverse;
-            System.out.println(HelloController.reverse);
+            HelloController.setting_reverse(!HelloController.getting_reverse());
+            System.out.println(HelloController.getting_reverse());
         }));
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
