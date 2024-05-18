@@ -281,8 +281,8 @@ public class HelloController {
         createPauseBeforeRestart();
     }
     public void resetGame() {
-        KeyboardHandler.isSceneChanged = false;
-        HelloApplication.timeline.stop();
+        KeyboardHandler.setting_isSceneChanged(false);
+        HelloApplication.getting_timeline().stop();
         jump = false;
         small = false;
         big = false;

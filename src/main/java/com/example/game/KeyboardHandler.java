@@ -4,7 +4,10 @@ import javafx.scene.input.KeyCode;
 import java.io.IOException;
 
 public class KeyboardHandler {
-    public static boolean isSceneChanged = false;
+    private static boolean isSceneChanged = false;
+    public static void setting_isSceneChanged(boolean scene) {
+        isSceneChanged = scene;
+    }
     public static void setOnKeyPressed(Scene scene) {
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.SPACE && !HelloController.getting_jump()) {

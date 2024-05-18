@@ -36,7 +36,7 @@ public class EnemyTransition {
         HelloController.getting_money1Transition().pause();
         HelloController.getting_money2Transition().pause();
         HelloController.getting_money3Transition().pause();
-        HelloApplication.timeline.stop();
+        HelloApplication.getting_timeline().stop();
     }
 
     static void play() {
@@ -58,6 +58,6 @@ public class EnemyTransition {
         HelloController.getting_money1Transition().play();
         HelloController.getting_money2Transition().play();
         HelloController.getting_money3Transition().play();
-        HelloApplication.timeline.play();
+        HelloApplication.getting_timeline().play();
     }
 }
