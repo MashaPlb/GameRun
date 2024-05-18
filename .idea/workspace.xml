@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="13.05">
+    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="14.05">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_time.txt" beforeDir="false" afterPath="$PROJECT_DIR$/best_time.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/EnemyTransition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/EnemyTransition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/StartScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/StartScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/Themes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/start-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/game/start-scene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/game/themes.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +112,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715609935509</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="14.05">
+      <option name="closed" value="true" />
+      <created>1715683441352</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715683441352</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +139,7 @@
     <MESSAGE value="commit 27.04" />
     <MESSAGE value="commit 30.04" />
     <MESSAGE value="13.05" />
-    <option name="LAST_COMMIT_MESSAGE" value="13.05" />
+    <MESSAGE value="14.05" />
+    <option name="LAST_COMMIT_MESSAGE" value="14.05" />
   </component>
 </project>
