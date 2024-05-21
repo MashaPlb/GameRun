@@ -36,14 +36,38 @@ public class HelloController {
     public static TranslateTransition newEnemy1Transition;
     public static TranslateTransition newEnemy2Transition;
     public static TranslateTransition newEnemy3Transition;
-    public static TranslateTransition plat1Transition;
-    public static TranslateTransition plat2Transition;
-    public static TranslateTransition plat3Transition;
-    public static TranslateTransition moneyTransition;
-    public static TranslateTransition money1Transition;
-    public static TranslateTransition money2Transition;
-    public static TranslateTransition money3Transition;
-    public static TranslateTransition enemyAngryTransition;
+    private static TranslateTransition plat1Transition;
+    public static TranslateTransition getting_plat1Transition() {
+        return plat1Transition;
+    }
+    private static TranslateTransition plat2Transition;
+    public static TranslateTransition getting_plat2Transition() {
+        return plat2Transition;
+    }
+    private static TranslateTransition plat3Transition;
+    public static TranslateTransition getting_plat3Transition() {
+        return plat3Transition;
+    }
+    private static TranslateTransition moneyTransition;
+    public static TranslateTransition getting_moneyTransition() {
+        return moneyTransition;
+    }
+    private static TranslateTransition money1Transition;
+    public static TranslateTransition getting_money1Transition() {
+        return money1Transition;
+    }
+    private static TranslateTransition money2Transition;
+    public static TranslateTransition getting_money2Transition() {
+        return money2Transition;
+    }
+    private static TranslateTransition money3Transition;
+    public static TranslateTransition getting_money3Transition() {
+        return money3Transition;
+    }
+    private static TranslateTransition enemyAngryTransition;
+    public static TranslateTransition getting_enemyAngryTransition() {
+        return enemyAngryTransition;
+    }
     public static long startTime, endTime, playTime, pauseStartTime, pauseTime;
     public static boolean reverse = false;
     public static boolean jump = false;

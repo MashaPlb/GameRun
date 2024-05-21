@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         gameClient = new GameClient();
         try {
-            gameClient.startConnection("10.249.1.124", 6666);
+            gameClient.startConnection("localhost", 6666);
             System.out.println("Подключение к серверу успешно установлено.");
         } catch (IOException e) {
             LOGGER.log(Level.SEVERE, "Не удалось подключиться к серверу:", e);

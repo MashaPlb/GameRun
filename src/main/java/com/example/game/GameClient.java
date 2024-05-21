@@ -25,7 +25,7 @@ public class GameClient {
     }
     public static void waitForStartSignal() throws IOException, ClassNotFoundException {
         Object message;
-        while ((message = in.readObject()) != null) {
+        while ((message = in.readObject()) == null) {
             if ("START_GAME".equals(message.toString())) {
                 // Запуск игры
                 startGame();

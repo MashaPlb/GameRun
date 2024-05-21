@@ -7,7 +7,7 @@ public class GameClientRunner {
         GameClient client = new GameClient();
         try {
             // Замените "localhost" на IP-адрес сервера, если он запущен на другом компьютере
-            client.startConnection("10.249.1.124", 6666);
+            client.startConnection("localhost", 6666);
             // Теперь клиент подключен и может отправлять сообщения
             client.sendMessage("Привет, я второй игрок!");
             // Получение сообщений от сервера (если они есть)

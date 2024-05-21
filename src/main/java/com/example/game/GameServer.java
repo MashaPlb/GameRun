@@ -68,13 +68,14 @@ public class GameServer {
 
                 // Отправка приветственного сообщения новому клиенту
                 out.writeObject("Добро пожаловать на сервер!");
-                GameClient.waitForStartSignal();
+
 
                 // Обработка сообщений от клиента
                 Object inputObject;
-                while ((inputObject = in.readObject()) != null) {
+                while ((inputObject = in.readObject()) == null) {
                     // Обработайте входящий объект, например, ход игрока
                     handleClientInput(inputObject);
+                    GameClient.waitForStartSignal();
                 }
             } catch (IOException | ClassNotFoundException e) {
                 LOGGER.log(Level.SEVERE, "Ошибка при обмене данными с клиентом: ", e);
