@@ -13,7 +13,7 @@ public class Money {
                 new KeyFrame(Duration.seconds(3), event -> {
                     myMoney.setFitWidth(48);
                     myMoney.setFitHeight(39);
-                    HelloController.isMoneyCollected = false;
+                    HelloController.setting_isMoneyCollected(false);
                 })
         );
         timeline.play();
@@ -25,7 +25,7 @@ public class Money {
                 new KeyFrame(Duration.seconds(3), event -> {
                     myMoney.setFitWidth(48);
                     myMoney.setFitHeight(39);
-                    HelloController.isBigMoneyCollected = false;
+                    HelloController.setting_isBigMoneyCollected(false);
                 })
         );
         timeline.play();

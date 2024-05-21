@@ -7,7 +7,7 @@ public class GameClientRunner {
         GameClient client = new GameClient();
         try {
             // Замените "localhost" на IP-адрес сервера, если он запущен на другом компьютере
-            client.startConnection("localhost", 6666);
+            client.startConnection("10.249.25.235", 6666);
             // Теперь клиент подключен и может отправлять сообщения
             client.sendMessage("Привет, я второй игрок!");
             // Получение сообщений от сервера (если они есть)
@@ -15,12 +15,6 @@ public class GameClientRunner {
             System.out.println(message);
         } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                client.stopConnection();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

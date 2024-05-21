@@ -4,12 +4,15 @@ import javafx.scene.input.KeyCode;
 import java.io.IOException;
 
 public class KeyboardHandler {
-    public static boolean isSceneChanged = false;
+    private static boolean isSceneChanged = false;
+    public static void setting_isSceneChanged(boolean scene) {
+        isSceneChanged = scene;
+    }
     public static void setOnKeyPressed(Scene scene) {
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.SPACE && !HelloController.jump) {
-                if (!HelloController.isPause)
-                    HelloController.jump = true;
+            if (e.getCode() == KeyCode.SPACE && !HelloController.getting_jump()) {
+                if (HelloController.isPause())
+                    HelloController.setting_jump(true);
             } else if (e.getCode() == KeyCode.ENTER && !isSceneChanged) {
                 try {
                     HelloApplication.changeScene("hello-view.fxml");
@@ -18,45 +21,45 @@ public class KeyboardHandler {
                     throw new RuntimeException(ex);
                 }
             }
-            if (!HelloController.reverse) {
+            if (!HelloController.getting_reverse()) {
                 if (e.getCode() == KeyCode.LEFT)
-                    HelloController.left = true;
+                    HelloController.setting_left(true);
                 else if (e.getCode() == KeyCode.RIGHT)
-                    HelloController.right = true;
+                    HelloController.setting_right(true);
                 else if (e.getCode() == KeyCode.D)
-                    HelloController.right2 = true;
+                    HelloController.setting_right2(true);
                 else if (e.getCode() == KeyCode.A)
-                    HelloController.left2 = true;
+                    HelloController.setting_left2(true);
                 else if (e.getCode() == KeyCode.S)
-                    HelloController.down = true;
+                    HelloController.setting_down(true);
                 else if (e.getCode() == KeyCode.W)
-                    HelloController.up = true;
+                    HelloController.setting_up(true);
                 else if (e.getCode() == KeyCode.DOWN) {
-                    if (!HelloController.isPause)
-                        HelloController.small = true;
+                    if (HelloController.isPause())
+                        HelloController.setting_small(true);
                 } else if (e.getCode() == KeyCode.UP) {
-                    if (!HelloController.isPause)
-                        HelloController.big = true;
+                    if (HelloController.isPause())
+                        HelloController.setting_big(true);
                 }
             } else {
                 if (e.getCode() == KeyCode.A)
-                    HelloController.left = true;
+                    HelloController.setting_left(true);
                 else if (e.getCode() == KeyCode.D)
-                    HelloController.right = true;
+                    HelloController.setting_right(true);
                 else if (e.getCode() == KeyCode.RIGHT)
-                    HelloController.right2 = true;
+                    HelloController.setting_right2(true);
                 else if (e.getCode() == KeyCode.LEFT)
-                    HelloController.left2 = true;
+                    HelloController.setting_left2(true);
                 else if (e.getCode() == KeyCode.DOWN)
-                    HelloController.down = true;
+                    HelloController.setting_down(true);
                 else if (e.getCode() == KeyCode.UP)
-                    HelloController.up = true;
+                    HelloController.setting_up(true);
                 else if (e.getCode() == KeyCode.S) {
-                    if (!HelloController.isPause)
-                        HelloController.small = true;
+                    if (HelloController.isPause())
+                        HelloController.setting_small(true);
                 } else if (e.getCode() == KeyCode.W) {
-                    if (!HelloController.isPause)
-                        HelloController.big = true;
+                    if (HelloController.isPause())
+                        HelloController.setting_big(true);
                 }
             }
         });
@@ -65,33 +68,33 @@ public class KeyboardHandler {
     public static void setOnKeyReleased(Scene scene) {
         scene.setOnKeyReleased(e -> {
             if (e.getCode() == KeyCode.ESCAPE)
-                HelloController.isPause = !HelloController.isPause;
-            if (!HelloController.reverse) {
+                HelloController.setting_isPause(HelloController.isPause());
+            if (!HelloController.getting_reverse()) {
                 if (e.getCode() == KeyCode.LEFT)
-                    HelloController.left = false;
+                    HelloController.setting_left(false);
                 else if (e.getCode() == KeyCode.RIGHT)
-                    HelloController.right = false;
+                    HelloController.setting_right(false);
                 else if (e.getCode() == KeyCode.D)
-                    HelloController.right2 = false;
+                    HelloController.setting_right2(false);
                 else if (e.getCode() == KeyCode.A)
-                    HelloController.left2 = false;
+                    HelloController.setting_left2(false);
                 else if (e.getCode() == KeyCode.S)
-                    HelloController.down = false;
+                    HelloController.setting_down(false);
                 else if (e.getCode() == KeyCode.W)
-                    HelloController.up = false;
+                    HelloController.setting_up(false);
             } else {
                 if (e.getCode() == KeyCode.A)
-                    HelloController.left = false;
+                    HelloController.setting_left(false);
                 else if (e.getCode() == KeyCode.D)
-                    HelloController.right = false;
+                    HelloController.setting_right(false);
                 else if (e.getCode() == KeyCode.RIGHT)
-                    HelloController.right2 = false;
+                    HelloController.setting_right2(false);
                 else if (e.getCode() == KeyCode.LEFT)
-                    HelloController.left2 = false;
+                    HelloController.setting_left2(false);
                 else if (e.getCode() == KeyCode.DOWN)
-                    HelloController.down = false;
+                    HelloController.setting_down(false);
                 else if (e.getCode() == KeyCode.UP)
-                    HelloController.up = false;
+                    HelloController.setting_up(false);
             }
         });
     }
