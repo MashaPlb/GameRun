@@ -35,7 +35,6 @@ public class GameClient {
     }
 
     private static void startGame() {
-        // Реализуйте логику перехода на игровую сцену
         Platform.runLater(() -> {
             try {
                 HelloApplication.changeScene("game-scene.fxml");

@@ -68,12 +68,11 @@ public class GameServer {
 
                 // Отправка приветственного сообщения новому клиенту
                 out.writeObject("Добро пожаловать на сервер!");
-
+                out.flush();
 
                 // Обработка сообщений от клиента
                 Object inputObject;
                 while ((inputObject = in.readObject()) == null) {
-                    // Обработайте входящий объект, например, ход игрока
                     handleClientInput(inputObject);
                     GameClient.waitForStartSignal();
                 }
@@ -86,9 +85,7 @@ public class GameServer {
 
         // Метод для обработки входящих объектов
         private void handleClientInput(Object inputObject) {
-            // Реализуйте логику обработки входящих сообщений от клиента
             System.out.println("Получено сообщение от клиента: " + inputObject.toString());
-            // ...
         }
 
         // Метод для корректного закрытия соединений
