@@ -43,7 +43,7 @@ public class HelloApplication extends Application {
         KeyboardHandler.setOnKeyPressed(scene);
         KeyboardHandler.setOnKeyReleased(scene);
         stage.show();
-        timeline = new Timeline(new KeyFrame(Duration.seconds(5), event -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(10), event -> {
             HelloController.setting_reverse(!HelloController.getting_reverse());
             System.out.println(HelloController.getting_reverse());
         }));
