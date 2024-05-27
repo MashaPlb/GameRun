@@ -1,6 +1,5 @@
-package com.example.game.scene;
+package com.example.game;
 
-import com.example.game.animation.HelloController;
 import com.example.game.handler.KeyboardHandler;
 import com.example.game.handler.MusicHandler;
 import javafx.animation.KeyFrame;

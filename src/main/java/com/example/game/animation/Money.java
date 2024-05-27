@@ -1,5 +1,6 @@
 package com.example.game.animation;
 
+import com.example.game.HelloController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.image.ImageView;

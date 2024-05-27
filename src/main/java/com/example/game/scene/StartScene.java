@@ -1,5 +1,6 @@
 package com.example.game.scene;
 
+import com.example.game.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

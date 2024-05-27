@@ -1,6 +1,8 @@
-package com.example.game.animation;
+package com.example.game;
 
-import com.example.game.scene.HelloApplication;
+import com.example.game.HelloApplication;
+import com.example.game.animation.EnemyTransition;
+import com.example.game.animation.Money;
 import com.example.game.handler.KeyboardHandler;
 import com.example.game.handler.MusicHandler;
 import javafx.animation.*;

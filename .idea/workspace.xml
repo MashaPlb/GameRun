@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="18.05">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/EnemyTransition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/animation/EnemyTransition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/GameClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/GameClientRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/GameServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/KeyboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/handler/KeyboardHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/animation/Money.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/game/MusicHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/game/handler/MusicHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-    </list>
+    <list default="true" id="99ff3728-42ce-4366-b529-a5eab2bbd538" name="Changes" comment="final" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,46 +53,14 @@
       <recent name="com.example.game" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameClientRunner">
-    <configuration name="GameClientRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.game.GameClientRunner" />
-      <module name="Game" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.game.animation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GameServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.game.GameServer" />
-      <module name="Game" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.game.animation.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.game.HelloApplication" />
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.game.scene.HelloApplication" />
       <module name="Game" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.GameClientRunner" />
-        <item itemvalue="Application.GameServer" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -171,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716051710332</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="final">
+      <option name="closed" value="true" />
+      <created>1716825062722</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716825062722</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +154,7 @@
     <MESSAGE value="commit 27.04" />
     <MESSAGE value="commit 30.04" />
     <MESSAGE value="18.05" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.05" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package com.example.game.animation;
 
-import com.example.game.scene.HelloApplication;
+import com.example.game.HelloApplication;
+import com.example.game.HelloController;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
