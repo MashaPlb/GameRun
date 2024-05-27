@@ -1,5 +1,8 @@
-package com.example.game;
+package com.example.game.animation;
 
+import com.example.game.scene.HelloApplication;
+import com.example.game.handler.KeyboardHandler;
+import com.example.game.handler.MusicHandler;
 import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -180,7 +183,7 @@ public class HelloController {
                 writer.write(String.valueOf(playTime));
                 writer.close();
             } catch (IOException e) {
-                System.err.println("Произошла ошибка при записи в файл: " + e.getMessage());
+                System.err.println("The error occurred while writing to the file: " + e.getMessage());
             }
 
         } else {

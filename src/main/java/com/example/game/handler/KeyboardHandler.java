@@ -1,4 +1,6 @@
-package com.example.game;
+package com.example.game.handler;
+import com.example.game.scene.HelloApplication;
+import com.example.game.animation.HelloController;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import java.io.IOException;

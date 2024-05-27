@@ -1,8 +1,10 @@
-package com.example.game;
-import java.io.IOException;
+package com.example.game.scene;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+
+import java.io.IOException;
 
 public class StartScene {
     @FXML

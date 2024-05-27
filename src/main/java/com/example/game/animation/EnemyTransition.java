@@ -1,5 +1,6 @@
-package com.example.game;
+package com.example.game.animation;
 
+import com.example.game.scene.HelloApplication;
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.TranslateTransition;
@@ -7,7 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 public class EnemyTransition {
-    static TranslateTransition create(double duration, double setToX, ImageView thisEnemy) {
+    public static TranslateTransition create(double duration, double setToX, ImageView thisEnemy) {
         TranslateTransition thisTransition = new TranslateTransition(Duration.millis(duration), thisEnemy);
         thisTransition.setFromX(0);
         thisTransition.setToX(setToX);
@@ -17,7 +18,7 @@ public class EnemyTransition {
         return thisTransition;
     }
 
-    static void pause() {
+    public static void pause() {
         HelloController.setting_playerSpeed(0);
         HelloController.getting_parallelTransition().pause();
         HelloController.getting_enemyTransition().pause();
@@ -39,7 +40,7 @@ public class EnemyTransition {
         HelloApplication.getting_timeline().stop();
     }
 
-    static void play() {
+    public static void play() {
         HelloController.setting_playerSpeed(4);
         HelloController.getting_parallelTransition().play();
         HelloController.getting_enemyTransition().play();

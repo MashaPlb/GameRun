@@ -1,9 +1,8 @@
-package com.example.game;
+package com.example.game.handler;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-import java.io.File;
 import java.util.Objects;
 
 public class MusicHandler {

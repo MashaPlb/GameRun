@@ -1,4 +1,4 @@
-package com.example.game;
+package com.example.game.animation;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
