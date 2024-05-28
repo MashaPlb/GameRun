@@ -5,6 +5,7 @@ import com.example.game.handler.MusicHandler;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -24,9 +25,12 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("start-scene.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1270, 832);
-        stage.initStyle(StageStyle.UNDECORATED);
+        Scene scene = new Scene(fxmlLoader.load(), 1270, 790);
         stage.setScene(scene);
+        stage.setOnCloseRequest(e -> {
+            Platform.exit();
+            System.exit(0);
+        });
         KeyboardHandler.setOnKeyPressed(scene);
         KeyboardHandler.setOnKeyReleased(scene);
         stage.show();
@@ -37,9 +41,12 @@ public class HelloApplication extends Application {
     public static void changeScene(String source) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(source));
-        Scene scene = new Scene(fxmlLoader.load(), 1270, 832);
-        stage.initStyle(StageStyle.UNDECORATED);
+        Scene scene = new Scene(fxmlLoader.load(), 1270, 790);
         stage.setScene(scene);
+        stage.setOnCloseRequest(e -> {
+            Platform.exit();
+            System.exit(0);
+        });
         KeyboardHandler.setOnKeyPressed(scene);
         KeyboardHandler.setOnKeyReleased(scene);
         stage.show();
